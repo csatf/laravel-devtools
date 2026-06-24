@@ -1,0 +1,15 @@
+# CSATF PHPStan / Larastan baseline.
+#
+# Do not run this file directly — include it from your application's root
+# phpstan.neon (see stubs/phpstan.neon.stub or the README):
+#
+#   includes:
+#       - vendor/larastan/larastan/extension.neon
+#       - vendor/csatf/laravel-devtools/phpstan.neon
+#   parameters:
+#       paths: [app]
+#
+parameters:
+    level: 5
+    checkModelProperties: true
+    noEnvCallsOutsideOfConfig: true

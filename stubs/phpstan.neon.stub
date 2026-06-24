@@ -1,0 +1,8 @@
+includes:
+    - vendor/larastan/larastan/extension.neon
+    - vendor/csatf/laravel-devtools/phpstan.neon
+
+parameters:
+    paths:
+        - app
+    # The CSATF baseline level lives in the included file; raise it here over time.

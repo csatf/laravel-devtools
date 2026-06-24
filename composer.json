@@ -1,0 +1,46 @@
+{
+    "name": "csatf/laravel-devtools",
+    "description": "Shared development-tooling baseline (Pint, Pest, Larastan, Pail) and config for CSATF Laravel applications.",
+    "type": "library",
+    "license": "proprietary",
+    "keywords": ["csatf", "laravel", "devtools", "pint", "pest", "larastan", "static-analysis"],
+    "authors": [
+        {
+            "name": "CSATF Engineering",
+            "email": "engineering@csatf.org"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "illuminate/console": "^11.0 || ^12.0",
+        "illuminate/support": "^11.0 || ^12.0",
+        "fakerphp/faker": "^1.24",
+        "larastan/larastan": "^3.0",
+        "laravel/pail": "^1.2",
+        "laravel/pint": "^1.25",
+        "mockery/mockery": "^1.6",
+        "nunomaduro/collision": "^8.8",
+        "pestphp/pest": "^4.0",
+        "pestphp/pest-plugin-laravel": "^4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Csatf\\LaravelDevtools\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Csatf\\LaravelDevtools\\DevtoolsServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
