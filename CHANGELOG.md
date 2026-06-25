@@ -6,6 +6,13 @@ All notable changes to this package are documented here. This project adheres to
 
 ## [Unreleased]
 
+## [1.1.0] - 2026-06-25
+
+### Added
+- Pin `laravel/boost` (^2.0) in the dev baseline. AI-assisted dev tooling is now
+  a shared standard since CSATF develops with Claude Code. Apps still run
+  `php artisan boost:install` once to generate per-app guidelines and MCP config.
+
 ## [1.0.0] - 2026-06-25
 
 ### Added

@@ -18,12 +18,19 @@ and static-analysis config drift) with one line.
 | `larastan/larastan` | Static analysis (baseline shipped here) |
 | `pestphp/pest` + `pest-plugin-laravel` | Test runner |
 | `laravel/pail` | Tailing logs in dev |
+| `laravel/boost` | AI-assisted dev tooling (MCP server + guidelines) |
 | `nunomaduro/collision` | Pretty CLI errors |
 | `mockery/mockery` | Mocking |
 | `fakerphp/faker` | Test data |
 
-Deliberately *not* included, because they are per-app choices: `laravel/sail`,
-`laravel/boost`.
+Deliberately *not* included, because it is a per-app infrastructure choice:
+`laravel/sail`.
+
+> **Boost is pinned here, but configured per app.** This package only pins the
+> version; each app still runs `php artisan boost:install` once, which generates
+> app-specific AI guidelines (from that app's installed packages) and writes the
+> MCP/editor config into the project. Standard across CSATF since we develop with
+> Claude Code; harmless elsewhere as it is `require-dev` and never loaded in prod.
 
 ## Install
 
