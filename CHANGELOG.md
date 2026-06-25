@@ -6,6 +6,8 @@ All notable changes to this package are documented here. This project adheres to
 
 ## [Unreleased]
 
+## [1.0.0] - 2026-06-25
+
 ### Added
 - Initial scaffold: `require-dev` baseline (Pint, Pest + Laravel plugin,
   Larastan, Pail, Collision, Mockery, Faker).
