@@ -32,6 +32,10 @@ Deliberately *not* included, because it is a per-app infrastructure choice:
 > MCP/editor config into the project. Standard across CSATF since we develop with
 > Claude Code; harmless elsewhere as it is `require-dev` and never loaded in prod.
 
+## Requirements
+
+PHP 8.2+, Laravel 11 / 12 / 13. Pest 4 or 5.
+
 ## Install
 
 1. Add the repository to the consuming app's `composer.json` (until it's on a

@@ -12,8 +12,8 @@
     ],
     "require": {
         "php": "^8.2",
-        "illuminate/console": "^11.0 || ^12.0",
-        "illuminate/support": "^11.0 || ^12.0",
+        "illuminate/console": "^11.0 || ^12.0 || ^13.0",
+        "illuminate/support": "^11.0 || ^12.0 || ^13.0",
         "fakerphp/faker": "^1.24",
         "larastan/larastan": "^3.0",
         "laravel/boost": "^2.0",
@@ -21,8 +21,8 @@
         "laravel/pint": "^1.25",
         "mockery/mockery": "^1.6",
         "nunomaduro/collision": "^8.8",
-        "pestphp/pest": "^4.0",
-        "pestphp/pest-plugin-laravel": "^4.0"
+        "pestphp/pest": "^4.0 || ^5.0",
+        "pestphp/pest-plugin-laravel": "^4.0 || ^5.0"
     },
     "autoload": {
         "psr-4": {
