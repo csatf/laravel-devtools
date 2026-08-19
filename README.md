@@ -19,11 +19,22 @@ and static-analysis config drift) with one line.
 | `pestphp/pest` + `pest-plugin-laravel` | Test runner |
 | `laravel/pail` | Tailing logs in dev |
 | `laravel/pao` | Agent-optimized output for test runs |
-| `laravel/sail` | Docker dev environment |
 | `laravel/boost` | AI-assisted dev tooling (MCP server + guidelines) |
 | `nunomaduro/collision` | Pretty CLI errors |
 | `mockery/mockery` | Mocking |
 | `fakerphp/faker` | Test data |
+
+Deliberately *not* included, because it is a per-app infrastructure choice:
+`laravel/sail`.
+
+> Everything pinned above is something you **run against the code**, or is
+> environment-neutral. Sail is the environment itself: it standardises nothing
+> about linting, analysis, or testing, and its real value — the `sail:install`
+> scaffold — is inherently per-app (compliance-api needs Postgres + Redshift;
+> stp-docs has a bespoke `docker/` directory). Pinning it would install an unused
+> binary for everyone on Herd, Valet, native PHP, or plain Compose, and put a
+> `vendor/bin/sail` in front of them that isn't the sanctioned workflow.
+> Apps that want Sail should require it themselves.
 
 > **`laravel/pao` sets this package's floor.** Every `pao` 1.x declares
 > `conflict: laravel/framework <12.0.0`, plus `pest >=4.6.3` and

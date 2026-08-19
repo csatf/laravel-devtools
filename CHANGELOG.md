@@ -6,6 +6,33 @@ All notable changes to this package are documented here. This project adheres to
 
 ## [Unreleased]
 
+## [1.4.0] - 2026-08-20
+
+### Removed
+- `laravel/sail`. Pinning it in 1.3.0 reversed a deliberate, documented decision
+  ("a per-app infrastructure choice") that should not have been overturned.
+
+  Everything else this package pins is run *against the code*, or is
+  environment-neutral. Sail is the environment itself — it standardises nothing
+  about style, analysis, or testing, and its real value is the one-time
+  `sail:install` scaffold, which is per-app by nature.
+
+  The repo evidence supports the original call: of the seven apps carrying
+  `laravel/sail`, only three (stars-sync, stp-docs, team) have ever created a
+  compose file; the other four look like unremoved Laravel skeleton defaults.
+  Three apps have actively opted out — integration-triage and llm-triage-eval use
+  no Docker, and completions runs plain Compose without Sail. Pinning centrally
+  would install an unused binary for those three.
+
+  Apps that want Sail should require it themselves. No app is affected by this
+  removal: every app that uses Sail already declares it in its own `require-dev`,
+  and 1.3.0 was never adopted.
+
+### Unchanged
+- The Laravel 11 drop and the PHP 8.3 / Pest 4.6.3 / Collision 8.9.3 floors stay.
+  Those are forced by `laravel/pao`, not by Sail, so this does not restore
+  Laravel 11 support.
+
 ## [1.3.0] - 2026-08-20
 
 ### Added
