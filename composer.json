@@ -1,9 +1,9 @@
 {
     "name": "csatf/laravel-devtools",
-    "description": "Shared development-tooling baseline (Pint, Pest, Larastan, Pail) and config for CSATF Laravel applications.",
+    "description": "Shared development-tooling baseline (Pint, Pest, Larastan, Pail, Pao, Sail) and config for CSATF Laravel applications.",
     "type": "library",
     "license": "proprietary",
-    "keywords": ["csatf", "laravel", "devtools", "pint", "pest", "larastan", "static-analysis"],
+    "keywords": ["csatf", "laravel", "devtools", "pint", "pest", "larastan", "sail", "pao", "static-analysis"],
     "authors": [
         {
             "name": "CSATF Engineering",
@@ -11,17 +11,19 @@
         }
     ],
     "require": {
-        "php": "^8.2",
-        "illuminate/console": "^11.0 || ^12.0 || ^13.0",
-        "illuminate/support": "^11.0 || ^12.0 || ^13.0",
+        "php": "^8.3",
+        "illuminate/console": "^12.0 || ^13.0",
+        "illuminate/support": "^12.0 || ^13.0",
         "fakerphp/faker": "^1.24",
         "larastan/larastan": "^3.0",
         "laravel/boost": "^2.0",
         "laravel/pail": "^1.2",
+        "laravel/pao": "^1.0",
         "laravel/pint": "^1.25",
+        "laravel/sail": "^1.41",
         "mockery/mockery": "^1.6",
-        "nunomaduro/collision": "^8.8",
-        "pestphp/pest": "^4.0 || ^5.0",
+        "nunomaduro/collision": "^8.9.3",
+        "pestphp/pest": "^4.6.3 || ^5.0",
         "pestphp/pest-plugin-laravel": "^4.0 || ^5.0"
     },
     "autoload": {

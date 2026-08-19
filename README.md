@@ -18,13 +18,19 @@ and static-analysis config drift) with one line.
 | `larastan/larastan` | Static analysis (baseline shipped here) |
 | `pestphp/pest` + `pest-plugin-laravel` | Test runner |
 | `laravel/pail` | Tailing logs in dev |
+| `laravel/pao` | Agent-optimized output for test runs |
+| `laravel/sail` | Docker dev environment |
 | `laravel/boost` | AI-assisted dev tooling (MCP server + guidelines) |
 | `nunomaduro/collision` | Pretty CLI errors |
 | `mockery/mockery` | Mocking |
 | `fakerphp/faker` | Test data |
 
-Deliberately *not* included, because it is a per-app infrastructure choice:
-`laravel/sail`.
+> **`laravel/pao` sets this package's floor.** Every `pao` 1.x declares
+> `conflict: laravel/framework <12.0.0`, plus `pest >=4.6.3` and
+> `collision >=8.9.3`, and requires PHP 8.3. Pinning it is therefore what drops
+> Laravel 11 and raises the Pest floor — no combination of versions supports
+> both `pao` and Laravel 11. Apps still on Laravel 11 should stay on devtools
+> `^1.2`.
 
 > **Boost is pinned here, but configured per app.** This package only pins the
 > version; each app still runs `php artisan boost:install` once, which generates
@@ -34,7 +40,12 @@ Deliberately *not* included, because it is a per-app infrastructure choice:
 
 ## Requirements
 
-PHP 8.2+, Laravel 11 / 12 / 13. Pest 4 or 5.
+PHP 8.3+, Laravel 12 / 13. Pest 4.6.3+ or 5.
+
+Constraints are kept as wide as each tool genuinely allows, so that adopting
+this package never forces an app's Laravel version. Where a range is narrow it
+is because a pinned tool requires it, not because a newer major was picked by
+default — see the `pao` note above.
 
 ## Install
 
